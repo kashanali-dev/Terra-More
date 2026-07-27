@@ -15,7 +15,7 @@ export default function SplitIntroSection() {
       >
         <div className="w-full max-w-lg mx-auto md:mx-0 text-center md:text-left">
           {/* Heading with vertical stretching like the image */}
-          <h2 className="text-3xl sm:text-4xl md:text-[35px] lg:text-[48px] font-black text-[#fdfcf7] leading-[1.05] tracking-tight uppercase transform scale-y-[1.25] md:scale-y-[1.35] origin-center md:origin-left my-6">
+          <h2 className="text-3xl sm:text-4xl md:text-[35px] lg:text-[42px] font-black text-[#fdfcf7] leading-[1.05] tracking-tight uppercase transform scale-y-[1.25] md:scale-y-[1.35] origin-center md:origin-left my-6">
             ¿QUERÉS ACCEDER <br />
             AL CANNABIS <br />
             MEDICINAL PERO <br />
@@ -38,7 +38,7 @@ export default function SplitIntroSection() {
           </p>
 
           {/* Subheadings - Perfectly adjusted tracking and vertical scale to match screenshot */}
-          <div className="space-y-5 md:space-y-6 pt-2 text-center md:text-left">
+          <div className="space-y-3 md:space-y-4 pt-2 text-center md:text-left">
             <h3 className="text-xl sm:text-[23px] md:text-[24px] font-black tracking-[-0.04em] leading-none text-[#fdfcf7] uppercase transform scale-y-[1.3] lg:scale-y-[1.35] origin-center md:origin-left">
               Sin membresía. Sin costos ocultos.
             </h3>

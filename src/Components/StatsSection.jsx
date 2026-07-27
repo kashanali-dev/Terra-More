@@ -41,7 +41,7 @@ export default function StatsSection() {
         <div className="w-full flex flex-col sm:flex-row justify-center md:justify-center items-center gap-10 sm:gap-16 md:gap-28 mt-16 md:mt-20">
           {/* Partner 1 */}
           <div className="text-center md:text-left max-w-50">
-            <p className="text-white text-[12px] sm:text-[13px] md:text-[14px] font-black tracking-normal leading-[1.2] uppercase transform scale-y-[1.15] origin-center md:origin-left">
+            <p className="text-white text-[15px] sm:text-[16px] md:text-[17px] font-black tracking-normal leading-[1.2] uppercase transform scale-y-[1.15] origin-center md:origin-left">
               ESTUDIO DE
               <br />
               ABOGADOS ROBLES
@@ -50,7 +50,7 @@ export default function StatsSection() {
 
           {/* Partner 2 */}
           <div className="text-center md:text-left max-w-50">
-            <p className="text-white text-[12px] sm:text-[13px] md:text-[14px] font-black tracking-normal leading-[1.2] uppercase transform scale-y-[1.15] origin-center md:origin-left">
+            <p className="text-white text-[15px] sm:text-[16px] md:text-[18px] font-black tracking-normal leading-[1.2] uppercase transform scale-y-[1.15] origin-center md:origin-left">
               LABORATORIO
               <br />
               PROPIO ARMEDIC

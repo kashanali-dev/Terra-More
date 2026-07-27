@@ -5,16 +5,28 @@ import React, { useState, useEffect } from "react";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  // Next.js hydration error aur extensions conflict ko completely bypass karne ke liye
   useEffect(() => {
     setMounted(true);
+
+    const handleScroll = () => {
+      // Yahan 100 badha diya hai taaki thoda zyada scroll karne par change ho
+      if (window.scrollY > 100) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   if (!mounted) {
     return (
-      <header className="fixed top-0 left-0 w-full z-50 bg-[#162713]/90 border-b border-white/5 h-20">
-        <div className="max-w-300uto px-6 flex items-center justify-between h-full">
+      <header className="fixed top-0 left-0 w-full z-50 bg-transparent border-b border-white/0 h-20 transition-all duration-300">
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-full">
           <div className="text-white font-black text-xl tracking-widest uppercase">
             TERRAMORE
           </div>
@@ -25,12 +37,16 @@ export default function Header() {
 
   return (
     <header
-      suppressHydrationWarning={true} // 👈 Browser extensions ke html modifications ko block karne ke liye
-      className="fixed top-0 left-0 w-full z-50 bg-[#162713]/90 backdrop-blur-md border-b border-white/5 font-sans select-none antialiased notranslate"
-      translate="no" // 👈 Google Translate ko is pure header ko touch karne se rokne ke liye
+      suppressHydrationWarning={true}
+      className={`fixed top-0 left-0 w-full z-50 font-sans select-none antialiased notranslate transition-all duration-300 ${
+        isScrolled
+          ? "bg-[#162713]/90 backdrop-blur-md border-b border-white/5"
+          : "bg-transparent border-b border-white/0"
+      }`}
+      translate="no"
     >
       <div
-        className="max-w-300 mx-auto px-6 sm:px-8"
+        className="max-w-7xl mx-auto px-6 sm:px-8"
         suppressHydrationWarning={true}
       >
         <div
@@ -47,7 +63,7 @@ export default function Header() {
             </a>
           </div>
 
-          {/* Desktop Only Links - Re-arranged according to your 5 sections */}
+          {/* Desktop Only Links */}
           <nav
             className="hidden lg:flex items-center space-x-10"
             suppressHydrationWarning={true}
@@ -84,7 +100,7 @@ export default function Header() {
             </a>
           </nav>
 
-          {/* Desktop Button - Links straight to the bottom/cta info section */}
+          {/* Desktop Button */}
           <div className="hidden lg:block">
             <a
               href="#informacion"
