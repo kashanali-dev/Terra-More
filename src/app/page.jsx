@@ -1,3 +1,4 @@
+"use client";
 import Header from "@/Components/Common/Header";
 import HeroSection from "@/Components/HeroSection";
 import IntroSection from "@/Components/IntroSection";
