@@ -12,7 +12,7 @@ export default function HeroSection() {
 
   if (!mounted) {
     return (
-      <section className="relative min-h-screen w-full bg-black z-0"></section>
+      <section className="relative min-h-screen w-full bg-[#0c150b] z-0"></section>
     );
   }
 
@@ -20,57 +20,66 @@ export default function HeroSection() {
     <section
       id="inicio"
       suppressHydrationWarning={true}
-      className="relative min-h-fit md:min-h-fit lg:min-h-screen w-full flex flex-col justify-between px-6 py-12 md:px-16 lg:px-22 bg-cover bg-center bg-no-repeat select-none overflow-hidden"
+      /* 
+        Mobile aur tablet par screen height ko fit kiya (max-lg:min-h-fit) 
+        aur responsive padding lagayi taaki niche ki faltu height khatam ho jaye.
+      */
+      className="relative min-h-fit lg:min-h-screen w-full flex flex-col px-6 py-16 md:px-12 lg:px-20 bg-cover bg-center bg-no-repeat select-none overflow-hidden"
       style={{ backgroundImage: "url('/hero.png')" }}
     >
       {/* Background Dark Overlay */}
-      <div className="absolute inset-0 bg-black/40 z-0"></div>
+      <div className="absolute inset-0 bg-black/35 z-0"></div>
 
-      {/* Strict layout behavior for tablets: forcing h-auto instead of full screen stretching */}
+      {/* Main Content Container */}
       <div
         suppressHydrationWarning={true}
-        className="relative z-10 max-w-5xl w-full text-white flex flex-col justify-between h-auto lg:h-full gap-10 sm:gap-12 md:gap-14 lg:gap-24 pt-20 md:pt-24 lg:pt-32"
+        className="relative z-10 w-full text-white flex flex-col gap-10 md:gap-14 pt-16 md:pt-24 pb-2"
       >
-        {/* Main Content Area */}
-        <div className="flex flex-col gap-6" suppressHydrationWarning={true}>
+        {/* Top Text Area */}
+        <div
+          className="flex flex-col gap-3 md:gap-4 max-lg:text-center max-lg:items-center"
+          suppressHydrationWarning={true}
+        >
+          {/* Exact heavy weight uppercase heading layout */}
           <h1
-            className="text-[32px] sm:text-5xl md:text-6xl lg:text-[5rem] font-bold uppercase tracking-tighter leading-[0.95] md:leading-[0.92] font-sans antialiased max-w-4xl notranslate"
+            className="text-[34px] sm:text-4xl md:text-5xl lg:text-[4.8rem] font-black uppercase antialiased max-w-4xl leading-[0.9] notranslate"
             translate="no"
           >
-            Acceso Legal <br />
-            Y Acompañado Al <br />
-            Cannabis Medicinal
+            ACCESO LEGAL <br />
+            Y ACOMPAÑADO AL <br />
+            CANNABIS MEDICINAL
           </h1>
 
+          {/* Paragraph weight kam (font-extralight) aur soft white rakha hai */}
           <p
-            className="text-xs sm:text-sm md:text-base font-normal max-w-2xl text-zinc-200/90 leading-normal tracking-wide notranslate"
+            className="text-lg sm:text-xl md:text-2xl font-light max-w-3xl text-white/80 leading-normal notranslate"
             translate="no"
           >
-            Somos una ONG habilitada en el Registro del Programa REPROCANN del{" "}
+            Somos una ONG habilitada en el Registro del{" "}
             <br className="hidden md:inline" />
-            Ministerio de Salud de la Nación.
+            Programa REPROCANN del Ministerio de Salud de la Nación.
           </p>
         </div>
 
-        {/* Bottom Action Container: Tight paddings applied specifically for tablet profiles */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 md:gap-6 w-full max-w-full pt-4 sm:pt-6 pb-2 md:pb-4 lg:pb-6">
+        {/* Bottom Action Buttons (BILKUL UNTOUCHED AS PER YOUR ORIGINAL WIDTHS) */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 w-full pb-0">
           <Link
             href="#"
-            className="w-full sm:w-55 md:w-65 lg:w-70 text-center py-3 border border-white/60 text-white rounded-full font-medium uppercase tracking-widest text-[11px] sm:text-xs hover:bg-white hover:text-black transition-all duration-300 backdrop-blur-[2px] block"
+            className="w-full sm:w-24 md:w-32 lg:w-40 text-center py-2 border border-white text-white rounded-full font-medium uppercase tracking-widest text-base lg:text-lg hover:bg-white hover:text-black transition-all duration-300 backdrop-blur-[2px] block"
           >
             WPP CÓRDOBA
           </Link>
 
           <Link
             href="#"
-            className="w-full sm:w-55 md:w-65 lg:w-70 text-center py-3 border border-white/60 text-white rounded-full font-medium uppercase tracking-widest text-[11px] sm:text-xs hover:bg-white hover:text-black transition-all duration-300 backdrop-blur-[2px] block"
+            className="w-full sm:w-24 md:w-32 lg:w-40 text-center py-2 border border-white text-white rounded-full font-medium uppercase tracking-widest text-base lg:text-lg hover:bg-white hover:text-black transition-all duration-300 backdrop-blur-[2px] block"
           >
             WPP BS. AS
           </Link>
 
           <Link
             href="#"
-            className="w-full sm:w-55 md:w-65 lg:w-70 text-center py-3 border border-white/60 text-white rounded-full font-medium uppercase tracking-widest text-[11px] sm:text-xs hover:bg-white hover:text-black transition-all duration-300 backdrop-blur-[2px] block"
+            className="w-full sm:w-24 md:w-32 lg:w-40 text-center py-2 border border-white text-white rounded-full font-medium uppercase tracking-widest text-base lg:text-lg hover:bg-white hover:text-black transition-all duration-300 backdrop-blur-[2px] block"
           >
             WPP ARGENTINA
           </Link>

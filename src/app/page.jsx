@@ -1,7 +1,7 @@
 import Header from "@/Components/Common/Header";
 import HeroSection from "@/Components/HeroSection";
 import IntroSection from "@/Components/IntroSection";
-import ProductosSection from "@/Components/ProductSection";
+import ProductSection from "@/Components/ProductSection";
 import StatsSection from "@/Components/StatsSection";
 import StepsSection from "@/Components/StepsSection";
 import Image from "next/image";
@@ -13,7 +13,7 @@ export default function Home() {
       <main>
         <HeroSection />
         <StepsSection />
-        <ProductosSection />
+        <ProductSection />
         <StatsSection />
         <IntroSection />
       </main>

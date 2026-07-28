@@ -1,4 +1,11 @@
 import React from "react";
+import { Oswald } from "next/font/google";
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  weight: ["500", "700"],
+  display: "swap",
+});
 
 export default function StatsSection() {
   const stats = [
@@ -10,47 +17,68 @@ export default function StatsSection() {
   return (
     <section
       id="estadisticas"
-      className="relative w-full min-h-137.5 md:min-h-130 flex flex-col justify-center items-center py-16 px-4 sm:px-6 lg:px-8 bg-cover bg-center bg-no-repeat font-sans select-none overflow-hidden"
+      className="relative w-full min-h-162.5 md:min-h-137.5 flex flex-col justify-center items-center py-12 md:py-16 bg-cover bg-center bg-no-repeat select-none overflow-hidden"
       style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/flower.PNG')`,
+        backgroundImage: `linear-gradient(rgba(10, 15, 10, 0.65), rgba(10, 15, 10, 0.65)), url('/back.png')`,
       }}
     >
-      {/* Container matching layout widths */}
-      <div className="w-full max-w-300 flex flex-col justify-center md:justify-between h-full">
-        {/* Fixed Pill Container - Changes to rounded-3xl on mobile and full capsule rounded-full on Desktop */}
-        <div className="w-full bg-[#1c2e15]/75 backdrop-blur-sm border border-white/5 rounded-4xl md:rounded-full py-10 md:py-12 px-6 sm:px-12 md:px-16 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-4 items-center justify-center text-center shadow-xl mt-6">
+      {/* Main Fluid Wrapper */}
+      <div className="w-full px-4 sm:px-6 md:px-16 lg:px-24 flex flex-col justify-center items-center">
+        {/* 
+          Stats Pill Container:
+          - Mobile par flex-col block banega aur vertical gap ('gap-12') dega taaki items aapas mein na chipkein.
+          - Desktop (md:) par aate hi automatic grid layout switch ho jayega.
+          - Mobile corner curve ko 'rounded-[30px]' rakha hai aur desktop par 'md:rounded-[65px]'.
+        */}
+        <div className="w-full bg-[#2e3b22]/60 border border-white/5 rounded-[30px] md:rounded-[65px] py-10 md:py-12 px-6 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-4 items-center justify-center text-center shadow-xl">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="flex flex-col items-center justify-center text-center"
+              className="flex flex-col items-center justify-center text-center w-full"
             >
-              {/* Stat Big Number - Responsive Stretched Text */}
-              <h2 className="text-4xl sm:text-5xl md:text-[54px] lg:text-[60px] font-black text-[#dfd0bd] leading-none uppercase tracking-tighter transform scale-y-[1.3] md:scale-y-[1.4] origin-center my-3">
+              {/* 
+                Big Numbers:
+                - Mobile screen par text size ko limit kiya hai ('text-5xl') taaki layout screen se bahar na bhage.
+                - Desktop par automatic fully scaled up ho kar bada ho jayega ('md:text-[80px] lg:text-[88px]').
+              */}
+              <h2
+                className={`${oswald.className} text-5xl md:text-[80px] lg:text-[88px] font-bold text-[#e1d5c3] leading-[0.9] uppercase tracking-[-0.04em] scale-y-[1.1] origin-center my-1`}
+              >
                 {stat.value}
               </h2>
 
-              {/* Stat Subtitle Label - Adjusted origin to center to prevent mobile clipping */}
-              <p className="text-[12px] sm:text-[13px] md:text-[14px] font-bold text-[#dfd0bd] leading-none uppercase tracking-[-0.03em] transform scale-y-[1.35] origin-center mt-5 mb-2">
+              {/* Description Subtitles inside Capsule */}
+              <p
+                className={`${oswald.className} text-xs md:text-[18px] font-semibold text-[#e1d5c3] leading-[0.95] uppercase tracking-[-0.02em] scale-y-[1.1] origin-center mt-3 mb-1`}
+              >
                 {stat.label}
               </p>
             </div>
           ))}
         </div>
 
-        {/* Bottom Partner Brands Section - Centered and perfectly spaced on mobile, justified on desktop */}
-        <div className="w-full flex flex-col sm:flex-row justify-center md:justify-center items-center gap-10 sm:gap-16 md:gap-28 mt-16 md:mt-20">
-          {/* Partner 1 */}
-          <div className="text-center md:text-left max-w-50">
-            <p className="text-white text-[15px] sm:text-[16px] md:text-[17px] font-black tracking-normal leading-[1.2] uppercase transform scale-y-[1.15] origin-center md:origin-left">
+        {/* 
+          Bottom Brands Section:
+          - Mobile par flex-col ho jayega aur ek ke niche ek brand name gap ke sath aayega.
+          - Desktop (sm:) par aate hi horizontal parallel horizontal design ban jayega.
+        */}
+        <div className="w-full max-w-195 flex flex-col sm:flex-row justify-between items-center gap-10 sm:gap-6 mt-14 md:mt-16 text-center">
+          {/* Brand 1 */}
+          <div className="min-w-40 flex justify-center">
+            <p
+              className={`${oswald.className} text-[#e1d5c3] text-sm md:text-[18px] font-semibold tracking-[-0.01em] leading-[1.05] uppercase scale-y-[1.1] origin-center`}
+            >
               ESTUDIO DE
               <br />
               ABOGADOS ROBLES
             </p>
           </div>
 
-          {/* Partner 2 */}
-          <div className="text-center md:text-left max-w-50">
-            <p className="text-white text-[15px] sm:text-[16px] md:text-[18px] font-black tracking-normal leading-[1.2] uppercase transform scale-y-[1.15] origin-center md:origin-left">
+          {/* Brand 2 */}
+          <div className="min-w-40 flex justify-center">
+            <p
+              className={`${oswald.className} text-[#e1d5c3] text-sm md:text-[18px] font-semibold tracking-[-0.01em] leading-[1.05] uppercase scale-y-[1.1] origin-center`}
+            >
               LABORATORIO
               <br />
               PROPIO ARMEDIC
