@@ -4,25 +4,18 @@ import React, { useState, useEffect } from "react";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      const shouldScroll = window.scrollY > 10;
+      setIsScrolled((prev) => (prev !== shouldScroll ? shouldScroll : prev));
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Prevent scroll when mobile drawer is fully active
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -34,18 +27,6 @@ export default function Header() {
     };
   }, [isOpen]);
 
-  if (!mounted) {
-    return (
-      <header className="fixed top-0 left-0 w-full z-50 bg-transparent border-b border-white/0 h-24 transition-all duration-300">
-        <div className="max-w-[85.5%] mx-auto flex items-center justify-between h-full px-0">
-          <div className="text-white font-black text-xl md:text-2xl tracking-widest uppercase">
-            TERRAMORE
-          </div>
-        </div>
-      </header>
-    );
-  }
-
   return (
     <header
       suppressHydrationWarning={true}
@@ -56,15 +37,8 @@ export default function Header() {
       }`}
       translate="no"
     >
-      {/* Container: Unaltered to completely preserve desktop layout symmetry */}
-      <div
-        className="max-w-[85.5%] mx-auto h-full px-0"
-        suppressHydrationWarning={true}
-      >
-        <div
-          className="flex items-center justify-between h-full"
-          suppressHydrationWarning={true}
-        >
+      <div className="max-w-[85.5%] mx-auto h-full px-0">
+        <div className="flex items-center justify-between h-full">
           {/* Logo Section */}
           <div className="shrink-0">
             <a
@@ -75,11 +49,8 @@ export default function Header() {
             </a>
           </div>
 
-          {/* Desktop Links - Safely Protected */}
-          <nav
-            className="hidden lg:flex items-center space-x-8 xl:space-x-12"
-            suppressHydrationWarning={true}
-          >
+          {/* Desktop Links */}
+          <nav className="hidden lg:flex items-center space-x-8 xl:space-x-12">
             <a
               href="#inicio"
               className="text-white font-bold lg:text-base uppercase tracking-wider transition-colors duration-200"
@@ -112,7 +83,7 @@ export default function Header() {
             </a>
           </nav>
 
-          {/* Desktop Button - Safely Protected */}
+          {/* Desktop Button */}
           <div className="hidden lg:block">
             <a
               href="#informacion"
@@ -147,12 +118,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* 
-        ========================================================================
-        MODERN RESPONSIVE DRAWER SLIDE SYSTEM
-        ========================================================================
-      */}
-      {/* Dark Overlay Tint Layer */}
+      {/* Mobile Drawer Overlay */}
       <div
         className={`fixed inset-0 bg-black/40 z-40 transition-opacity duration-300 lg:hidden ${
           isOpen
@@ -162,13 +128,12 @@ export default function Header() {
         onClick={() => setIsOpen(false)}
       />
 
-      {/* Slide-in Menu Panel */}
+      {/* Mobile Drawer Panel */}
       <div
         className={`fixed top-0 right-0 h-full w-[85%] sm:w-100 bg-[#162713] z-50 shadow-2xl transform transition-transform duration-300 ease-in-out lg:hidden flex flex-col ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        {/* Drawer Header Area with Logo and Close Icon */}
         <div className="flex items-center justify-between px-6 h-24 border-b border-white/5">
           <span className="text-white font-black text-xl tracking-wider uppercase">
             TERRAMORE
@@ -193,51 +158,48 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Scrollable Navigation Area inside Drawer */}
         <div className="flex-1 overflow-y-auto px-6 py-6 space-y-1">
           <a
             href="#inicio"
             onClick={() => setIsOpen(false)}
-            className="block text-white font-bold text-sm uppercase tracking-widest py-3.5 border-b border-white/5 transition-opacity active:opacity-70"
+            className="block text-white font-bold text-sm uppercase tracking-widest py-3.5 border-b border-white/5"
           >
             Inicio
           </a>
           <a
             href="#productos"
             onClick={() => setIsOpen(false)}
-            className="block text-white font-bold text-sm uppercase tracking-widest py-3.5 border-b border-white/5 transition-opacity active:opacity-70"
+            className="block text-white font-bold text-sm uppercase tracking-widest py-3.5 border-b border-white/5"
           >
             Productos
           </a>
           <a
             href="#pasos"
             onClick={() => setIsOpen(false)}
-            className="block text-white font-bold text-sm uppercase tracking-widest py-3.5 border-b border-white/5 transition-opacity active:opacity-70"
+            className="block text-white font-bold text-sm uppercase tracking-widest py-3.5 border-b border-white/5"
           >
             Pasos
           </a>
           <a
             href="#estadisticas"
             onClick={() => setIsOpen(false)}
-            className="block text-white font-bold text-sm uppercase tracking-widest py-3.5 border-b border-white/5 transition-opacity active:opacity-70"
+            className="block text-white font-bold text-sm uppercase tracking-widest py-3.5 border-b border-white/5"
           >
             Estadísticas
           </a>
           <a
             href="#informacion"
             onClick={() => setIsOpen(false)}
-            className="block text-white font-bold text-sm uppercase tracking-widest py-3.5 border-b border-white/5 transition-opacity active:opacity-70"
+            className="block text-white font-bold text-sm uppercase tracking-widest py-3.5 border-b border-white/5"
           >
             Información
           </a>
 
-          {/* Action Buttons Layer (Screenshot Mockup Match) */}
           <div className="pt-8 space-y-4">
-            {/* Main Solid Consultar Button */}
             <a
               href="#informacion"
               onClick={() => setIsOpen(false)}
-              className="block text-center bg-[#dfd0bd] text-[#162713] font-bold text-sm uppercase tracking-widest py-3.5 rounded-full active:scale-[0.98] transition-all shadow-md font-sans"
+              className="block text-center bg-[#dfd0bd] text-[#162713] font-bold text-sm uppercase tracking-widest py-3.5 rounded-full dynamic-click"
             >
               Consultar
             </a>

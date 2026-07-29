@@ -1,24 +1,34 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 export default function StepsSection() {
   return (
     <section
       id="productos"
-      className="relative min-h-screen md:min-h-fit w-full flex flex-col justify-center items-center px-6 py-24 md:py-28 bg-cover bg-center bg-no-repeat overflow-hidden text-white select-none"
-      style={{ backgroundImage: "url('/steps.png')" }}
+      className="relative min-h-screen md:min-h-fit w-full flex flex-col justify-center items-center px-6 py-24 md:py-28 bg-[#0a0f0a] overflow-hidden text-white select-none"
     >
-      {/* Background Subtle Dark Overlay */}
-      <div className="absolute inset-0 bg-black/25 z-0"></div>
+      {/* Background Image Optimization using Next.js Image Component */}
+      <Image
+        src="/steps.png"
+        alt="Steps Background"
+        fill
+        loading="lazy"
+        quality={80}
+        sizes="100vw"
+        className="object-cover object-center z-0 pointer-events-none"
+      />
 
-      {/* Aapka original max-w-7xl container bahaal kar diya taaki width bilkul pehle jaisi ho jaye */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center justify-center gap-16 md:gap-20">
+      {/* Background Subtle Dark Overlay */}
+      <div className="absolute inset-0 bg-black/25 z-10"></div>
+
+      {/* Main Container */}
+      <div className="relative z-20 w-full max-w-7xl mx-auto flex flex-col items-center justify-center gap-16 md:gap-20">
         {/* Main Container for Steps Grid */}
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 sm:gap-10 lg:gap-8 pt-10 md:pt-0">
-          {/* PASO 1 (Perfect Column Center) */}
+          {/* PASO 1 */}
           <div className="flex flex-col items-center text-center">
-            {/* Clean Outline WhatsApp Icon */}
             <div className="mb-4 text-white flex items-center justify-center">
               <svg
                 className="w-16 h-16 stroke-[1.4]"
@@ -51,9 +61,8 @@ export default function StepsSection() {
             </p>
           </div>
 
-          {/* PASO 2 (Perfect Column Center) */}
+          {/* PASO 2 */}
           <div className="flex flex-col items-center text-center">
-            {/* Clean Dual Bubble Outline Icon */}
             <div className="mb-4 text-white flex items-center justify-center">
               <svg
                 className="w-16 h-16 stroke-[1.4]"
@@ -82,9 +91,8 @@ export default function StepsSection() {
             </p>
           </div>
 
-          {/* PASO 3 (Perfect Column Center) */}
+          {/* PASO 3 */}
           <div className="flex flex-col items-center text-center">
-            {/* Premium Stethoscope Outline Icon */}
             <div className="mb-4 text-white flex items-center justify-center">
               <svg
                 className="w-16 h-16 stroke-[1.4]"
@@ -114,9 +122,8 @@ export default function StepsSection() {
             </p>
           </div>
 
-          {/* PASO 4 (Perfect Column Center) */}
+          {/* PASO 4 */}
           <div className="flex flex-col items-center text-center">
-            {/* Checked Document Outline Icon */}
             <div className="mb-4 text-white flex items-center justify-center">
               <svg
                 className="w-16 h-16 stroke-[1.4]"

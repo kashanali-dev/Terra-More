@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function HeroSection() {
   const [mounted, setMounted] = useState(false);
@@ -20,27 +21,32 @@ export default function HeroSection() {
     <section
       id="inicio"
       suppressHydrationWarning={true}
-      /* 
-        Mobile aur tablet par screen height ko fit kiya (max-lg:min-h-fit) 
-        aur responsive padding lagayi taaki niche ki faltu height khatam ho jaye.
-      */
-      className="relative min-h-fit lg:min-h-screen w-full flex flex-col px-6 py-16 md:px-12 lg:px-20 bg-cover bg-center bg-no-repeat select-none overflow-hidden"
-      style={{ backgroundImage: "url('/hero.png')" }}
+      className="relative min-h-fit lg:min-h-screen w-full flex flex-col px-6 py-16 md:px-12 lg:px-20 bg-[#0c150b] select-none overflow-hidden"
     >
+      {/* Background Image Optimization using Next.js Image Component */}
+      <Image
+        src="/hero.png"
+        alt="Hero Background"
+        fill
+        priority
+        quality={85}
+        sizes="100vw"
+        className="object-cover object-center z-0 pointer-events-none"
+      />
+
       {/* Background Dark Overlay */}
-      <div className="absolute inset-0 bg-black/35 z-0"></div>
+      <div className="absolute inset-0 bg-black/35 z-10"></div>
 
       {/* Main Content Container */}
       <div
         suppressHydrationWarning={true}
-        className="relative z-10 w-full text-white flex flex-col gap-10 md:gap-14 pt-16 md:pt-24 pb-2"
+        className="relative z-20 w-full text-white flex flex-col gap-10 md:gap-14 pt-16 md:pt-24 pb-2"
       >
         {/* Top Text Area */}
         <div
           className="flex flex-col gap-3 md:gap-4 max-lg:text-center max-lg:items-center"
           suppressHydrationWarning={true}
         >
-          {/* Exact heavy weight uppercase heading layout */}
           <h1
             className="text-[34px] sm:text-4xl md:text-5xl lg:text-[4.8rem] font-black uppercase antialiased max-w-4xl leading-[0.9] notranslate"
             translate="no"
@@ -50,7 +56,6 @@ export default function HeroSection() {
             CANNABIS MEDICINAL
           </h1>
 
-          {/* Paragraph weight kam (font-extralight) aur soft white rakha hai */}
           <p
             className="text-lg sm:text-xl md:text-2xl font-light max-w-3xl text-white/80 leading-normal notranslate"
             translate="no"
@@ -61,7 +66,7 @@ export default function HeroSection() {
           </p>
         </div>
 
-        {/* Bottom Action Buttons (BILKUL UNTOUCHED AS PER YOUR ORIGINAL WIDTHS) */}
+        {/* Bottom Action Buttons (UNTOUCHED ORIGINAL WIDTHS) */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6 w-full pb-0">
           <Link
             href="#"

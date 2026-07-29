@@ -1,6 +1,7 @@
-"use client"; // Is directive se error bilkul khatam ho jayega
+"use client";
 
 import React, { useRef, useEffect } from "react";
+import Image from "next/image";
 
 export default function ProductSection() {
   const sliderRef = useRef(null);
@@ -70,8 +71,9 @@ export default function ProductSection() {
             return;
           }
 
+          // Fixed original slider children calculation typo safely for JSX
           const cardWidth =
-            sliderRef.current.children?.clientWidth || clientWidth;
+            sliderRef.current.children?.[0]?.clientWidth || clientWidth;
           sliderRef.current.scrollBy({
             left: cardWidth + 24,
             behavior: "smooth",
@@ -110,7 +112,7 @@ export default function ProductSection() {
   const slide = (direction) => {
     if (sliderRef.current) {
       const { scrollLeft } = sliderRef.current;
-      const cardWidth = sliderRef.current.children?.clientWidth || 300;
+      const cardWidth = sliderRef.current.children?.[0]?.clientWidth || 300;
       const scrollAmount = cardWidth + 24;
 
       sliderRef.current.scrollTo({
@@ -127,13 +129,24 @@ export default function ProductSection() {
     <section
       ref={sectionRef}
       id="pasos"
-      className="relative w-full flex flex-col justify-center items-center py-20 md:py-24 bg-[#162713] bg-cover bg-center bg-no-repeat overflow-hidden text-white select-none"
-      style={{ backgroundImage: "url('/bg.png')" }}
+      className="relative w-full flex flex-col justify-center items-center py-20 md:py-24 bg-[#162713] overflow-hidden text-white select-none"
     >
-      <div className="absolute inset-0 bg-linear-to-b from-[#162713]/90 via-transparent to-[#162713]/95 z-0"></div>
-      <div className="absolute inset-0 bg-black/15 z-0"></div>
+      {/* Background Image Optimization using Next.js Image Component */}
+      <Image
+        src="/bg.png"
+        alt="Products Background"
+        fill
+        loading="lazy"
+        quality={75}
+        sizes="100vw"
+        className="object-cover object-center z-0 pointer-events-none"
+      />
 
-      <div className="relative z-10 w-full max-w-[85.5%] mx-auto flex flex-col px-0">
+      {/* Gradients and Overlays */}
+      <div className="absolute inset-0 bg-linear-to-b from-[#162713]/90 via-transparent to-[#162713]/95 z-10"></div>
+      <div className="absolute inset-0 bg-black/15 z-10"></div>
+
+      <div className="relative z-20 w-full max-w-[85.5%] mx-auto flex flex-col px-0">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 md:mb-10 gap-6">
           <h2 className="text-2xl sm:text-3xl md:text-[40px] font-bold text-white leading-[1.05] tracking-tight md:tracking-normal">
             Productos de cannabis medicinal <br className="hidden sm:inline" />{" "}
@@ -202,11 +215,15 @@ export default function ProductSection() {
                 </span>
               </div>
 
+              {/* Optimized Individual Product Images for JSX */}
               <div className="w-full h-48 sm:h-52 md:h-56 my-2 flex items-center justify-center relative drop-shadow-[0_16px_25px_rgba(0,0,0,0.65)]">
-                <img
+                <Image
                   src={producto.imagen}
                   alt={producto.nombre}
-                  className="max-w-full max-h-full object-contain pointer-events-none"
+                  fill
+                  sizes="(max-w-640px) 100vw, (max-w-1024px) 33vw, 25vw"
+                  loading="lazy"
+                  className="object-contain pointer-events-none"
                 />
               </div>
 
