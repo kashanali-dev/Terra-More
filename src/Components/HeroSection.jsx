@@ -44,11 +44,11 @@ export default function HeroSection() {
       >
         {/* Top Text Area */}
         <div
-          className="flex flex-col gap-3 md:gap-4 max-lg:text-center max-lg:items-center"
+          className="flex flex-col gap-1.5 md:gap-2 max-lg:text-center max-lg:items-center"
           suppressHydrationWarning={true}
         >
           <h1
-            className="text-[34px] sm:text-4xl md:text-5xl lg:text-[4.8rem] font-black uppercase antialiased max-w-4xl leading-[0.9] notranslate"
+            className="text-[34px] sm:text-4xl md:text-5xl lg:text-[4.4rem] font-black uppercase antialiased max-w-4xl leading-[0.85] notranslate"
             translate="no"
           >
             ACCESO LEGAL <br />
@@ -57,7 +57,7 @@ export default function HeroSection() {
           </h1>
 
           <p
-            className="text-lg sm:text-xl md:text-2xl font-light max-w-3xl text-white/80 leading-normal notranslate"
+            className="text-lg sm:text-xl md:text-xl font-light max-w-3xl text-white/80 leading-normal mt-1 md:mt-2 notranslate"
             translate="no"
           >
             Somos una ONG habilitada en el Registro del{" "}
@@ -66,8 +66,8 @@ export default function HeroSection() {
           </p>
         </div>
 
-        {/* Bottom Action Buttons (UNTOUCHED ORIGINAL WIDTHS) */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 w-full pb-0">
+        {/* Bottom Action Buttons with Increased Top Gap using mt properties */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 w-full mt-8 md:mt-16 pb-0">
           <Link
             href="#"
             className="w-full sm:w-24 md:w-32 lg:w-40 text-center py-2 border border-white text-white rounded-full font-medium uppercase tracking-widest text-base lg:text-lg hover:bg-white hover:text-black transition-all duration-300 backdrop-blur-[2px] block"
