@@ -45,7 +45,7 @@ export default function ProductDetailClient({ product }) {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14">
         {/* Gallery */}
         <div className="flex flex-col gap-4">
-          <div className="relative w-full aspect-square rounded-3xl bg-[#1b2f15]/95 border border-white/5 overflow-hidden shadow-2xl">
+          <div className="relative w-full aspect-square rounded-3xl bg-[#1b2f15]/95 border border-white/5 overflow-hidden shadow-2xl lg:max-w-[40rem] lg:mx-auto">
             <Image
               src={product.galeria[selected]}
               alt={product.nombre}

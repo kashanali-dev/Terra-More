@@ -20,6 +20,19 @@
   --text-label-size: clamp(0.75rem, 0.7rem + 0.2vw, 0.875rem);
 }
 
+/* Large screens (TV / LCD / big monitors): keep scaling fonts up.
+   At >=1536px the base clamps are capped, so we continue the curve
+   upward so text stays readable on huge displays. */
+@media (min-width: 1536px) {
+  :root {
+    --text-h1-size: clamp(3.5rem, 1rem + 2.6vw, 6.5rem);
+    --text-h2-size: clamp(2.5rem, 0.9rem + 1.6vw, 4.5rem);
+    --text-h3-size: clamp(1.5rem, 1.1rem + 0.4vw, 2.25rem);
+    --text-body-size: clamp(1.125rem, 0.85rem + 0.3vw, 1.5rem);
+    --text-label-size: clamp(0.875rem, 0.7rem + 0.18vw, 1.125rem);
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

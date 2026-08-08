@@ -30,7 +30,7 @@ export default function StatsSection() {
       <div className="absolute inset-0 bg-linear-to-b from-[#0a0f0a]/30 via-transparent to-[#0a0f0a]/30 z-10"></div>
 
       {/* Main Container Layout */}
-      <div className="relative z-20 w-full max-w-[85.5%] mx-auto flex flex-col justify-center items-center">
+      <div className="relative z-20 w-full max-w-[min(85.5%,100rem)] mx-auto flex flex-col justify-center items-center">
         {/* Exact Tinted Wide Pill Box with Original Padding */}
         <div className="w-full bg-[#1e2716]/55 border border-white/4 backdrop-blur-[1px] rounded-[50px] md:rounded-[75px] py-14 md:py-16 px-6 md:px-16 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 items-center justify-center text-center">
           {stats.map((stat, index) => (

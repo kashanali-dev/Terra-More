@@ -102,7 +102,7 @@ export default async function ProductPage({ params }) {
         </div>
         <div className="absolute inset-0 bg-linear-to-b from-[#0a0f0a]/95 via-[#0a0f0a]/85 to-[#0a0f0a]/95 z-10" />
 
-        <div className="relative z-20 w-full max-w-[85.5%] mx-auto flex flex-col gap-8">
+        <div className="relative z-20 w-full max-w-[min(85.5%,100rem)] mx-auto flex flex-col gap-8">
           {/* Breadcrumb */}
           <nav
             aria-label="Breadcrumb"
@@ -125,7 +125,7 @@ export default async function ProductPage({ params }) {
 
       {/* Related products */}
       <section className="w-full py-16 bg-[#162713] text-white select-none">
-        <div className="max-w-[85.5%] mx-auto w-full flex flex-col gap-8">
+        <div className="max-w-[min(85.5%,100rem)] mx-auto w-full flex flex-col gap-8">
           <h2 className="text-h2 font-black uppercase tracking-display">
             Productos relacionados
           </h2>

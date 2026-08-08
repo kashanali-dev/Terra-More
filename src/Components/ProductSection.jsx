@@ -108,7 +108,7 @@ export default function ProductSection() {
       <div className="absolute inset-0 bg-linear-to-b from-[#162713]/90 via-transparent to-[#162713]/95 z-10"></div>
       <div className="absolute inset-0 bg-black/15 z-10"></div>
 
-      <div className="relative z-20 w-full max-w-[85.5%] mx-auto flex flex-col px-0">
+      <div className="relative z-20 w-full max-w-[min(85.5%,100rem)] mx-auto flex flex-col px-0">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 md:mb-10 gap-6">
           <h2 className="text-h2 font-black text-white tracking-display">
             Productos de cannabis medicinal <br className="hidden sm:inline" />{" "}
@@ -162,7 +162,7 @@ export default function ProductSection() {
           {productos.map((producto, index) => (
             <div
               key={`prod-${producto.id}-${index}`}
-              className="bg-[#1b2f15]/95 border border-white/5 rounded-3xl pt-8 pb-6 px-6 flex flex-col items-center justify-between text-center transition-transform duration-300 hover:scale-[1.01] w-full min-w-70 sm:min-w-[320px] md:min-w-[calc(33.333%-16px)] lg:min-w-[calc(25%-18px)] snap-start shadow-2xl backdrop-blur-sm"
+              className="bg-[#1b2f15]/95 border border-white/5 rounded-3xl pt-8 pb-6 px-6 flex flex-col items-center justify-between text-center transition-transform duration-300 hover:scale-[1.01] w-full min-w-70 sm:min-w-80 md:min-w-[calc(33.333%-1rem)] lg:min-w-[calc(25%-1.125rem)] snap-start shadow-2xl backdrop-blur-sm"
             >
               <span className="text-label font-bold tracking-widest text-white mb-3 block uppercase">
                 {producto.categoria}

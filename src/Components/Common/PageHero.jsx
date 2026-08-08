@@ -21,7 +21,7 @@ export default function PageHero({
       <div className="absolute inset-0 bg-black/55 z-10" />
       <div className="absolute inset-0 bg-linear-to-b from-black/20 via-transparent to-black/70 z-10" />
 
-      <div className="relative z-20 w-full max-w-[85.5%] mx-auto text-white flex flex-col gap-5">
+      <div className="relative z-20 w-full max-w-[min(85.5%,100rem)] mx-auto text-white flex flex-col gap-5">
         {/* Breadcrumb */}
         <nav
           aria-label="Breadcrumb"

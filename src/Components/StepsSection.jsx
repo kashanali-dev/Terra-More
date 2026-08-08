@@ -110,7 +110,7 @@ export default function StepsSection() {
       <div className="absolute inset-0 bg-black/15 z-10"></div>
 
       {/* Main Container */}
-      <div className="relative z-20 w-full max-w-[85.5%] mx-auto flex flex-col items-center justify-center gap-12 md:gap-16">
+      <div className="relative z-20 w-full max-w-[min(85.5%,100rem)] mx-auto flex flex-col items-center justify-center gap-12 md:gap-16">
         {/* Steps Cards Grid */}
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((step) => (

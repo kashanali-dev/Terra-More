@@ -17,7 +17,7 @@ export default function CotizarPage() {
         crumbs={[{ label: "Cotizar" }]}
       />
       <section className="w-full py-16 md:py-20 bg-[#0a0f0a] min-h-[60vh]">
-        <div className="max-w-[85.5%] mx-auto w-full">
+        <div className="max-w-[min(85.5%,100rem)] mx-auto w-full">
           <QuoteClient />
         </div>
       </section>

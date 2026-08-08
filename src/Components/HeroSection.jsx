@@ -41,7 +41,7 @@ export default function HeroSection() {
       {/* Main Content Container */}
       <div
         suppressHydrationWarning={true}
-        className="relative z-20 w-full max-w-[85.5%] mx-auto text-white flex flex-col gap-10 md:gap-14 pt-16 md:pt-24 pb-2"
+        className="relative z-20 w-full max-w-[min(85.5%,100rem)] mx-auto text-white flex flex-col gap-10 md:gap-14 pt-16 md:pt-24 pb-2"
       >
         {/* Top Text Area */}
         <div

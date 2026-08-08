@@ -29,7 +29,7 @@ export default function Footer() {
 
       {/* CTA band */}
       <div className="w-full border-b border-white/10">
-        <div className="max-w-[85.5%] mx-auto px-0 py-10 md:py-12 flex flex-col lg:flex-row items-center justify-between gap-6 text-center lg:text-left">
+        <div className="max-w-[min(85.5%,100rem)] mx-auto px-0 py-10 md:py-12 flex flex-col lg:flex-row items-center justify-between gap-6 text-center lg:text-left">
           <div className="flex flex-col gap-2">
             <h2 className="text-h2 font-black uppercase tracking-display">
               ¿Querés acceder al cannabis medicinal?
@@ -58,8 +58,8 @@ export default function Footer() {
       </div>
 
       {/* Main columns */}
-      <div className="relative z-10 w-full max-w-[85.5%] mx-auto px-0 py-14">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
+      <div className="relative z-10 w-full max-w-[min(85.5%,100rem)] mx-auto px-0 py-14">
+        <div className="flex flex-col sm:flex-row sm:flex-wrap gap-x-8 gap-y-10 lg:flex-nowrap lg:justify-between">
           {/* Brand */}
           <div className="flex flex-col gap-4">
             <Link
@@ -68,7 +68,7 @@ export default function Footer() {
             >
               TERRAMORE
             </Link>
-            <p className="text-white/70 text-body font-normal">
+            <p className="text-white/70 text-body font-normal max-w-[21rem]">
               {SITE.slogan}. ONG habilitada en el registro del programa
               REPROCANN del Ministerio de Salud de la Nación.
             </p>
@@ -184,7 +184,7 @@ export default function Footer() {
 
       {/* Trust strip */}
       <div className="w-full border-t border-white/10">
-        <div className="max-w-[85.5%] mx-auto px-0 py-6 flex flex-wrap items-center justify-center lg:justify-between gap-x-10 gap-y-3 text-center">
+        <div className="max-w-[min(85.5%,100rem)] mx-auto px-0 py-6 flex flex-wrap items-center justify-center lg:justify-between gap-x-10 gap-y-3 text-center">
           {["REPROCANN · Min. de Salud", "Estudio de Abogados Robles", "Laboratorio propio ArMedic"].map(
             (item) => (
               <span

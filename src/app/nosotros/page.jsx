@@ -110,7 +110,7 @@ export default function NosotrosPage() {
 
       {/* Values */}
       <section className="w-full py-20 md:py-24 bg-[#0a0f0a] text-white select-none">
-        <div className="max-w-[85.5%] mx-auto w-full flex flex-col gap-12">
+        <div className="max-w-[min(85.5%,100rem)] mx-auto w-full flex flex-col gap-12">
           <div className="flex flex-col gap-3 max-w-3xl">
             <span className="text-[#dfd0bd] text-label font-bold uppercase tracking-[0.25em]">
               Qué nos define
@@ -143,7 +143,7 @@ export default function NosotrosPage() {
 
       {/* Stats */}
       <section className="w-full py-20 bg-[#162713] text-white select-none">
-        <div className="max-w-[85.5%] mx-auto w-full">
+        <div className="max-w-[min(85.5%,100rem)] mx-auto w-full">
           <div className="w-full bg-[#1e2716]/70 border border-white/10 rounded-[50px] py-14 px-6 md:px-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             {[
               { value: "+350", label: "Socios activos" },
@@ -165,7 +165,7 @@ export default function NosotrosPage() {
 
       {/* How we work */}
       <section className="w-full py-20 md:py-24 bg-[#0a0f0a] text-white select-none">
-        <div className="max-w-[85.5%] mx-auto w-full flex flex-col gap-12">
+        <div className="max-w-[min(85.5%,100rem)] mx-auto w-full flex flex-col gap-12">
           <div className="flex flex-col gap-3 max-w-3xl">
             <span className="text-[#dfd0bd] text-label font-bold uppercase tracking-[0.25em]">
               Cómo trabajamos
@@ -207,7 +207,7 @@ export default function NosotrosPage() {
 
       {/* Partners */}
       <section className="w-full py-16 bg-[#162713] text-white select-none">
-        <div className="max-w-[85.5%] mx-auto w-full flex flex-col gap-10">
+        <div className="max-w-[min(85.5%,100rem)] mx-auto w-full flex flex-col gap-10">
           <h2 className="text-h2 font-black uppercase tracking-display text-center">
             Un circuito profesional
           </h2>
