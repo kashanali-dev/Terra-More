@@ -18,7 +18,14 @@
   --text-h2-size: clamp(1.75rem, 1.1rem + 1.6vw, 3.75rem);
   --text-h3-size: clamp(1.25rem, 1.05rem + 0.7vw, 2rem);
   --text-body-size: clamp(1rem, 0.9rem + 0.35vw, 1.375rem);
-  --text-label-size: clamp(0.75rem, 0.68rem + 0.2vw, 1rem);
+  --text-label-size: clamp(0.8rem, 0.7rem + 0.25vw, 1.125rem);
+
+  /* Tailwind's static text utilities are also made fluid so buttons,
+     prices, card text, badges etc. scale up on big screens too */
+  --text-xs-size: clamp(0.75rem, 0.65rem + 0.25vw, 1.125rem);
+  --text-sm-size: clamp(0.875rem, 0.75rem + 0.3vw, 1.375rem);
+  --text-base-size: var(--text-body-size);
+  --text-lg-size: clamp(1.125rem, 0.9rem + 0.4vw, 1.75rem);
 }
 
 /* Very large screens (TV / big LCD): keep scaling fonts up so text is
@@ -29,7 +36,10 @@
     --text-h2-size: clamp(3.25rem, 1.2rem + 1.8vw, 5.5rem);
     --text-h3-size: clamp(1.9rem, 1.1rem + 0.7vw, 3rem);
     --text-body-size: clamp(1.375rem, 1rem + 0.4vw, 1.75rem);
-    --text-label-size: clamp(1rem, 0.75rem + 0.25vw, 1.375rem);
+    --text-label-size: clamp(1rem, 0.8rem + 0.25vw, 1.375rem);
+    --text-xs-size: clamp(0.9375rem, 0.75rem + 0.25vw, 1.375rem);
+    --text-sm-size: clamp(1.125rem, 0.9rem + 0.3vw, 1.5rem);
+    --text-lg-size: clamp(1.5rem, 1.2rem + 0.4vw, 2.25rem);
   }
 }
 
@@ -55,6 +65,12 @@
   --text-body--line-height: 1.6;
   --text-label: var(--text-label-size);
   --text-label--line-height: 1.4;
+
+  /* Fluid overrides for Tailwind's static text utilities */
+  --text-xs: var(--text-xs-size);
+  --text-sm: var(--text-sm-size);
+  --text-base: var(--text-base-size);
+  --text-lg: var(--text-lg-size);
 }
 
 @media (prefers-color-scheme: dark) {

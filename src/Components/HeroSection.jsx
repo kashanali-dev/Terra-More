@@ -22,7 +22,7 @@ export default function HeroSection() {
     <section
       id="inicio"
       suppressHydrationWarning={true}
-      className="relative min-h-fit lg:min-h-screen w-full flex flex-col py-16 bg-[#0c150b] select-none overflow-hidden"
+      className="relative min-h-fit lg:min-h-[70vh] w-full flex flex-col py-16 bg-[#0c150b] select-none overflow-hidden"
     >
       {/* Background Image Optimization using Next.js Image Component */}
       <Image
