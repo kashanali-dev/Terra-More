@@ -6,30 +6,30 @@
 
   /* ------------------------------------------------------------------ */
   /* Type scale (fluid, rem-based)                                       */
-  /* Scales continuously 320px -> 1440px:                                */
-  /*   H1    32px -> 56px   (2rem     -> 3.5rem)                         */
-  /*   H2    28px -> 40px   (1.75rem  -> 2.5rem)                         */
-  /*   H3    20px -> 24px   (1.25rem  -> 1.5rem)                         */
-  /*   Body  16px -> 18px   (1rem     -> 1.125rem)                       */
-  /*   Label 12px -> 14px   (0.75rem  -> 0.875rem)                       */
+  /* Scales continuously from 320px upward:                              */
+  /*   H1    32px -> 88px   (2rem   -> 5.5rem)                           */
+  /*   H2    28px -> 60px   (1.75rem -> 3.75rem)                         */
+  /*   H3    20px -> 32px   (1.25rem -> 2rem)                            */
+  /*   Body  16px -> 22px   (1rem   -> 1.375rem)                         */
+  /*   Label 12px -> 16px   (0.75rem -> 1rem)                            */
+  /* The slope is steep so text stays readable on big LCD/TV screens.    */
   /* ------------------------------------------------------------------ */
-  --text-h1-size: clamp(2rem, 1.4rem + 2.4vw, 3.5rem);
-  --text-h2-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.5rem);
-  --text-h3-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
-  --text-body-size: clamp(1rem, 0.9375rem + 0.2vw, 1.125rem);
-  --text-label-size: clamp(0.75rem, 0.7rem + 0.2vw, 0.875rem);
+  --text-h1-size: clamp(2rem, 1.2rem + 3vw, 5.5rem);
+  --text-h2-size: clamp(1.75rem, 1.1rem + 1.6vw, 3.75rem);
+  --text-h3-size: clamp(1.25rem, 1.05rem + 0.7vw, 2rem);
+  --text-body-size: clamp(1rem, 0.9rem + 0.35vw, 1.375rem);
+  --text-label-size: clamp(0.75rem, 0.68rem + 0.2vw, 1rem);
 }
 
-/* Large screens (TV / LCD / big monitors): keep scaling fonts up.
-   At >=1536px the base clamps are capped, so we continue the curve
-   upward so text stays readable on huge displays. */
+/* Very large screens (TV / big LCD): keep scaling fonts up so text is
+   readable from a distance on huge displays. */
 @media (min-width: 1536px) {
   :root {
-    --text-h1-size: clamp(3.5rem, 1rem + 2.6vw, 6.5rem);
-    --text-h2-size: clamp(2.5rem, 0.9rem + 1.6vw, 4.5rem);
-    --text-h3-size: clamp(1.5rem, 1.1rem + 0.4vw, 2.25rem);
-    --text-body-size: clamp(1.125rem, 0.85rem + 0.3vw, 1.5rem);
-    --text-label-size: clamp(0.875rem, 0.7rem + 0.18vw, 1.125rem);
+    --text-h1-size: clamp(4.5rem, 1.5rem + 3vw, 8rem);
+    --text-h2-size: clamp(3.25rem, 1.2rem + 1.8vw, 5.5rem);
+    --text-h3-size: clamp(1.9rem, 1.1rem + 0.7vw, 3rem);
+    --text-body-size: clamp(1.375rem, 1rem + 0.4vw, 1.75rem);
+    --text-label-size: clamp(1rem, 0.75rem + 0.25vw, 1.375rem);
   }
 }
 
