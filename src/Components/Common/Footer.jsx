@@ -59,7 +59,7 @@ export default function Footer() {
 
       {/* Main columns */}
       <div className="relative z-10 w-full max-w-[min(85.5%,100rem)] mx-auto px-0 py-14">
-        <div className="flex flex-col sm:flex-row sm:flex-wrap gap-x-8 gap-y-10 lg:flex-nowrap lg:justify-between">
+        <div className="flex flex-col sm:flex-row sm:flex-wrap gap-x-8 gap-y-10 xl:flex-nowrap xl:justify-between">
           {/* Brand */}
           <div className="flex flex-col gap-4">
             <Link

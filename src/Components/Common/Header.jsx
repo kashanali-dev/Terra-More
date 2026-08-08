@@ -46,7 +46,7 @@ export default function Header() {
           : "bg-transparent border-b border-white/0 h-24"
       }`}
     >
-      <div className="max-w-[min(85.5%,100rem)] mx-auto h-full px-0">
+      <div className="w-full max-w-[min(85.5%,100rem)] mx-auto h-full px-0">
         <div className="flex items-center justify-between h-full">
           {/* Logo Section */}
           <div className="shrink-0">
