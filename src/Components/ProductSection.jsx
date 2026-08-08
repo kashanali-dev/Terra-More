@@ -169,7 +169,7 @@ export default function ProductSection() {
               </span>
 
               <div className="border border-white/60 rounded-full px-10 py-2 mb-6 w-fit min-w-27.5">
-                <span className="text-white text-sm font-bold tracking-widest">
+                <span className="text-white text-base font-bold tracking-widest">
                   {producto.precioEtiqueta}
                 </span>
               </div>
@@ -193,18 +193,18 @@ export default function ProductSection() {
               <div className="w-full mt-6">
                 <Link
                   href={`/producto/${producto.slug}`}
-                  className="bg-[#dfd0bd] hover:bg-white text-[#162713] font-black text-sm uppercase tracking-[0.15em] py-3.5 px-6 rounded-full w-full block transition-colors duration-300 shadow-md"
+                  className="bg-[#dfd0bd] hover:bg-white text-[#162713] font-black text-base uppercase tracking-[0.15em] py-3.5 px-6 rounded-full w-full block transition-colors duration-300 shadow-md"
                 >
                   {producto.boton ?? "COMPRAR"}
                 </Link>
                 <button
                   type="button"
                   onClick={() => handleAdd(producto.slug)}
-                  className="mt-2.5 text-xs text-white/70 hover:text-[#dfd0bd] font-bold uppercase tracking-[0.15em] transition-colors"
+                  className="mt-2.5 text-sm text-white/70 hover:text-[#dfd0bd] font-bold uppercase tracking-[0.15em] transition-colors"
                 >
                   {added === producto.slug ? "✓ Añadido al carrito" : "+ Agregar"}
                 </button>
-                <p className="text-xs text-white/70 font-normal tracking-wide mt-3 normal-case">
+                <p className="text-sm text-white/70 font-normal tracking-wide mt-3 normal-case">
                   Consultá disponibilidad
                 </p>
               </div>
