@@ -28,7 +28,7 @@ export default function SplitIntroSection() {
         <div className="relative z-20 w-full max-w-xl text-left">
           {" "}
           {/* FIXED COLOR: Exact Soft Light Cream/Ivory Tint instead of pure white */}{" "}
-          <h2 className="text-h2 font-black text-[#f3ebd9] tracking-wider uppercase">
+          <h2 className="text-h2 font-black text-[#f3ebd9] tracking-display uppercase">
             {" "}
             ¿QUERÉS ACCEDER <br /> AL CANNABIS <br /> MEDICINAL PERO <br /> NO
             SABÉS <br /> POR DONDE <br /> EMPEZAR?{" "}
@@ -49,10 +49,10 @@ export default function SplitIntroSection() {
 
           {/* Restored Font Sizes for Lower Headings */}
           <div className="w-full flex flex-col">
-            <h3 className="text-h3 font-bold tracking-wide text-[#fdfcf7] uppercase">
+            <h3 className="text-h3 font-bold tracking-sub text-[#fdfcf7] uppercase">
               Sin membresía. Sin costos ocultos.
             </h3>
-            <h3 className="text-h3 font-bold tracking-wide text-[#fdfcf7] uppercase mt-1.5">
+            <h3 className="text-h3 font-bold tracking-sub text-[#fdfcf7] uppercase mt-1.5">
               Solo el turno médico.
             </h3>
           </div>
@@ -60,7 +60,7 @@ export default function SplitIntroSection() {
           {/* Centered Button Area with Increased Top Gap */}
           <div className="pt-6 md:pt-25 w-full flex justify-center">
             <button
-              className="border border-[#fdfcf7]/80 hover:bg-white/10 text-[#fdfcf7] font-bold text-sm tracking-widest uppercase py-3 px-6 rounded-full transition-colors duration-200 w-full sm:w-auto min-w-70 sm:min-w-60 text-center leading-tight mx-auto md:mx-0"
+              className="border border-[#fdfcf7]/80 hover:bg-white/10 text-[#fdfcf7] font-bold text-sm tracking-widest uppercase py-3 px-6 rounded-full transition-colors duration-200 w-full sm:w-auto sm:min-w-60 text-center leading-tight mx-auto md:mx-0"
             >
               {" "}
               ESCRIBINOS Y TE <br /> CONTAMOS TODO EN 5 MINUTOS{" "}

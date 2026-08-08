@@ -116,7 +116,7 @@ export default function PrivacidadPage() {
                   <span className="text-[#dfd0bd] text-label font-bold tracking-widest shrink-0">
                     {s.n}
                   </span>
-                  <h2 className="text-h2 font-black uppercase tracking-wider">
+                  <h2 className="text-h2 font-black uppercase tracking-display">
                     {s.t}
                   </h2>
                 </div>
@@ -136,7 +136,7 @@ export default function PrivacidadPage() {
 
           {/* Contact block */}
           <div className="bg-[#162713] border border-white/5 rounded-3xl p-6 md:p-8 flex flex-col gap-4">
-            <h3 className="text-h3 font-black uppercase tracking-wide">
+            <h3 className="text-h3 font-black uppercase tracking-sub">
               Contacto de privacidad
             </h3>
             <p className="text-body font-normal text-white/70">

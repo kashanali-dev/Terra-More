@@ -77,10 +77,10 @@ export default function NosotrosPage() {
             <span className="text-[#dfd0bd] text-label font-bold uppercase tracking-[0.25em] mb-4 block">
               Nuestra misión
             </span>
-            <h2 className="text-h2 font-black text-[#f3ebd9] uppercase tracking-wider">
+            <h2 className="text-h2 font-black text-[#f3ebd9] uppercase tracking-display">
               Acceso legal,
               <br /> sin barreras,
-              <br /> con acompañamiento
+              <br /> con <br className="sm:hidden" /> acompañamiento
             </h2>
           </div>
         </div>
@@ -115,7 +115,7 @@ export default function NosotrosPage() {
             <span className="text-[#dfd0bd] text-label font-bold uppercase tracking-[0.25em]">
               Qué nos define
             </span>
-            <h2 className="text-h2 font-black uppercase tracking-wider">
+            <h2 className="text-h2 font-black uppercase tracking-display">
               Nuestros valores
             </h2>
           </div>
@@ -129,7 +129,7 @@ export default function NosotrosPage() {
                 <span className="text-h2 font-black text-[#dfd0bd]/60">
                   0{i + 1}
                 </span>
-                <h3 className="text-h3 font-black uppercase tracking-wide">
+                <h3 className="text-h3 font-black uppercase tracking-sub">
                   {v.titulo}
                 </h3>
                 <p className="text-body font-normal text-white/80">
@@ -151,7 +151,7 @@ export default function NosotrosPage() {
               { value: "2 sedes", label: "En Argentina" },
             ].map((s, i) => (
               <div key={i} className="flex flex-col items-center gap-2">
-                <h3 className="text-h1 font-black text-[#e5dac6] tracking-wider">
+                <h3 className="text-h1 font-black text-[#e5dac6] tracking-display">
                   {s.value}
                 </h3>
                 <p className="text-label font-bold text-[#e5dac6]/80 uppercase tracking-widest">
@@ -170,7 +170,7 @@ export default function NosotrosPage() {
             <span className="text-[#dfd0bd] text-label font-bold uppercase tracking-[0.25em]">
               Cómo trabajamos
             </span>
-            <h2 className="text-h2 font-black uppercase tracking-wider">
+            <h2 className="text-h2 font-black uppercase tracking-display">
               El proceso, paso a paso
             </h2>
           </div>
@@ -193,7 +193,7 @@ export default function NosotrosPage() {
                   </span>
                 </div>
                 <div className="h-px w-full bg-white/10"></div>
-                <h3 className="text-h3 font-black uppercase tracking-wide">
+                <h3 className="text-h3 font-black uppercase tracking-sub">
                   {s.t}
                 </h3>
                 <p className="text-body font-normal text-white/85">
@@ -208,12 +208,12 @@ export default function NosotrosPage() {
       {/* Partners */}
       <section className="w-full py-16 bg-[#162713] text-white select-none">
         <div className="max-w-[85.5%] mx-auto w-full flex flex-col gap-10">
-          <h2 className="text-h2 font-black uppercase tracking-wider text-center">
+          <h2 className="text-h2 font-black uppercase tracking-display text-center">
             Un circuito profesional
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto w-full">
             <div className="bg-[#1e2716]/70 border border-white/10 rounded-3xl p-8 flex flex-col items-center text-center gap-3">
-              <h3 className="text-h3 font-black uppercase tracking-wide text-[#dfd0bd]">
+              <h3 className="text-h3 font-black uppercase tracking-sub text-[#dfd0bd]">
                 Estudio de Abogados Robles
               </h3>
               <p className="text-body font-normal text-white/80">
@@ -222,7 +222,7 @@ export default function NosotrosPage() {
               </p>
             </div>
             <div className="bg-[#1e2716]/70 border border-white/10 rounded-3xl p-8 flex flex-col items-center text-center gap-3">
-              <h3 className="text-h3 font-black uppercase tracking-wide text-[#dfd0bd]">
+              <h3 className="text-h3 font-black uppercase tracking-sub text-[#dfd0bd]">
                 Laboratorio propio ArMedic
               </h3>
               <p className="text-body font-normal text-white/80">
@@ -237,7 +237,7 @@ export default function NosotrosPage() {
       {/* CTA */}
       <section className="w-full px-6 md:px-12 lg:px-20 py-20 bg-[#0c150b] text-white select-none">
         <div className="max-w-4xl mx-auto w-full flex flex-col items-center text-center gap-6">
-          <h2 className="text-h2 font-black uppercase tracking-wider">
+          <h2 className="text-h2 font-black uppercase tracking-display">
             ¿Querés empezar tu proceso?
           </h2>
           <p className="text-body font-normal text-white/85 max-w-xl">

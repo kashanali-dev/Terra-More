@@ -44,7 +44,7 @@ export default function PageHero({
           ))}
         </nav>
 
-        <h1 className="text-h1 font-black uppercase tracking-wider">
+        <h1 className="text-h1 font-black uppercase tracking-display">
           {title}
         </h1>
 

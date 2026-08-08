@@ -48,10 +48,10 @@ export default function HeroSection() {
           className="flex flex-col gap-1.5 md:gap-2 max-lg:text-center max-lg:items-center"
           suppressHydrationWarning={true}
         >
-          <h1 className="text-h1 font-black uppercase tracking-wider antialiased max-w-4xl">
+          <h1 className="text-h1 font-black uppercase tracking-display antialiased max-w-4xl">
             ACCESO LEGAL <br />
             Y ACOMPAÑADO AL <br />
-            CANNABIS MEDICINAL
+            CANNABIS <br className="sm:hidden" /> MEDICINAL
           </h1>
 
           <p className="text-body font-normal max-w-3xl text-white/80 mt-1 md:mt-2">

@@ -129,7 +129,7 @@ export default function StepsSection() {
 
               <div className="h-px w-full bg-white/10"></div>
 
-              <h3 className="text-h3 font-black uppercase tracking-wide">
+              <h3 className="text-h3 font-black uppercase tracking-sub">
                 {step.t}
               </h3>
               <p className="text-body font-normal text-white/85">

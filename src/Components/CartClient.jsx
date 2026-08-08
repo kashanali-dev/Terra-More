@@ -58,7 +58,7 @@ export default function CartClient() {
           </svg>
         </div>
         <div className="flex flex-col gap-2">
-          <h2 className="text-h2 font-black uppercase tracking-wider text-white">
+          <h2 className="text-h2 font-black uppercase tracking-display text-white">
             Tu carrito está vacío
           </h2>
           <p className="text-body font-normal text-white/75 max-w-md mx-auto">
@@ -105,7 +105,7 @@ export default function CartClient() {
               </span>
               <Link
                 href={`/producto/${product.slug}`}
-                className="block text-h3 font-black uppercase tracking-wide text-white hover:text-[#dfd0bd] transition-colors mt-1"
+                className="block text-h3 font-black uppercase tracking-sub text-white hover:text-[#dfd0bd] transition-colors mt-1"
               >
                 {product.nombre}
               </Link>
@@ -150,7 +150,7 @@ export default function CartClient() {
         <button
           type="button"
           onClick={clear}
-          className="self-start text-sm text-white/70 hover:text-white font-normal tracking-wide mt-2 transition-colors"
+          className="self-start text-sm text-white/70 hover:text-white font-normal tracking-sub mt-2 transition-colors"
         >
           Vaciar carrito
         </button>
@@ -158,7 +158,7 @@ export default function CartClient() {
 
       {/* Summary */}
       <aside className="lg:sticky lg:top-28 bg-[#1b2f15]/80 border border-white/5 rounded-3xl p-6 md:p-8 flex flex-col gap-5">
-        <h3 className="text-h3 font-black uppercase tracking-wide text-white">
+        <h3 className="text-h3 font-black uppercase tracking-sub text-white">
           Resumen del pedido
         </h3>
 

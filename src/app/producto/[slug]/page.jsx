@@ -126,7 +126,7 @@ export default async function ProductPage({ params }) {
       {/* Related products */}
       <section className="w-full py-16 bg-[#162713] text-white select-none">
         <div className="max-w-[85.5%] mx-auto w-full flex flex-col gap-8">
-          <h2 className="text-h2 font-black uppercase tracking-wider">
+          <h2 className="text-h2 font-black uppercase tracking-display">
             Productos relacionados
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -149,7 +149,7 @@ export default async function ProductPage({ params }) {
                     className="object-contain pointer-events-none drop-shadow-[0_14px_22px_rgba(0,0,0,0.6)] group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <h3 className="text-h3 font-black uppercase tracking-wide text-white mt-4">
+                <h3 className="text-h3 font-black uppercase tracking-sub text-white mt-4">
                   {p.nombre}
                 </h3>
                 <span className="text-[#dfd0bd] font-bold mt-2">{p.precio}</span>

@@ -58,7 +58,7 @@ export default function ProductDetailClient({ product }) {
               {product.categoria}
             </span>
           </div>
-          <div className="flex gap-3">
+          <div className="flex flex-wrap gap-3">
             {product.galeria.map((src, i) => (
               <button
                 key={src + i}
@@ -86,7 +86,7 @@ export default function ProductDetailClient({ product }) {
         {/* Info */}
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-3">
-            <h2 className="text-h1 font-black uppercase tracking-wider text-white">
+            <h2 className="text-h1 font-black uppercase tracking-display text-white">
               {product.nombre}
             </h2>
             <div className="flex items-center gap-3 flex-wrap">
@@ -101,7 +101,7 @@ export default function ProductDetailClient({ product }) {
           </div>
 
           <div className="flex items-center gap-4 flex-wrap">
-            <span className="text-h2 font-black text-[#dfd0bd] tracking-wide">
+            <span className="text-h2 font-black text-[#dfd0bd] tracking-sub">
               {product.precio}
             </span>
             <span className="text-sm text-white/70 font-normal">
@@ -203,7 +203,7 @@ export default function ProductDetailClient({ product }) {
       <div className="mt-16 lg:mt-20 grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 flex flex-col gap-6">
           <section className="bg-[#1b2f15]/70 border border-white/5 rounded-3xl p-6 md:p-8">
-            <h3 className="text-h3 font-black uppercase tracking-wide text-white mb-4">
+            <h3 className="text-h3 font-black uppercase tracking-sub text-white mb-4">
               Descripción
             </h3>
             {product.descripcion.map((p, i) => (
@@ -214,7 +214,7 @@ export default function ProductDetailClient({ product }) {
           </section>
 
           <section className="bg-[#1b2f15]/70 border border-white/5 rounded-3xl p-6 md:p-8">
-            <h3 className="text-h3 font-black uppercase tracking-wide text-white mb-4">
+            <h3 className="text-h3 font-black uppercase tracking-sub text-white mb-4">
               Modo de uso
             </h3>
             <p className="text-body font-normal text-white/75">{product.usos}</p>
@@ -223,7 +223,7 @@ export default function ProductDetailClient({ product }) {
 
         <div className="flex flex-col gap-6">
           <section className="bg-[#1b2f15]/70 border border-white/5 rounded-3xl p-6 md:p-8">
-            <h3 className="text-h3 font-black uppercase tracking-wide text-white mb-4">
+            <h3 className="text-h3 font-black uppercase tracking-sub text-white mb-4">
               Ficha técnica
             </h3>
             <dl className="space-y-4">
@@ -247,7 +247,7 @@ export default function ProductDetailClient({ product }) {
           </section>
 
           <section className="bg-[#1b2f15]/70 border border-white/5 rounded-3xl p-6 md:p-8">
-            <h3 className="text-h3 font-black uppercase tracking-wide text-white mb-4">
+            <h3 className="text-h3 font-black uppercase tracking-sub text-white mb-4">
               Laboratorio propio
             </h3>
             <p className="text-body font-normal text-white/75">
@@ -260,7 +260,7 @@ export default function ProductDetailClient({ product }) {
 
       {/* FAQ */}
       <section className="mt-14 max-w-4xl">
-        <h3 className="text-h2 font-black uppercase tracking-wider text-white mb-6">
+        <h3 className="text-h2 font-black uppercase tracking-display text-white mb-6">
           Preguntas frecuentes
         </h3>
         <div className="flex flex-col gap-3">
@@ -282,7 +282,7 @@ function FaqItem({ q, a }) {
         onClick={() => setOpen((o) => !o)}
         className="w-full flex items-center justify-between gap-4 text-left px-6 py-5"
       >
-        <span className="text-white font-bold text-h3 tracking-wide uppercase">
+        <span className="text-white font-bold text-h3 tracking-sub uppercase">
           {q}
         </span>
         <svg

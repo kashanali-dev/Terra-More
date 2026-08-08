@@ -64,7 +64,7 @@ export default function QuoteClient() {
         onSubmit={handleSubmit}
         className="bg-[#162713] border border-white/5 rounded-3xl p-6 md:p-8 flex flex-col gap-6"
       >
-        <h2 className="text-h2 font-black uppercase tracking-wider text-white">
+        <h2 className="text-h2 font-black uppercase tracking-display text-white">
           Contanos qué necesitás
         </h2>
 
@@ -200,7 +200,7 @@ export default function QuoteClient() {
       {/* Side info */}
       <aside className="flex flex-col gap-6 lg:sticky lg:top-28">
         <div className="bg-[#162713] border border-white/5 rounded-3xl p-6 md:p-8 flex flex-col gap-4">
-          <h3 className="text-h3 font-black uppercase tracking-wide text-white">
+          <h3 className="text-h3 font-black uppercase tracking-sub text-white">
             ¿Por qué cotizar con Terramore?
           </h3>
           <ul className="flex flex-col gap-3 text-body">
@@ -228,7 +228,7 @@ export default function QuoteClient() {
         </div>
 
         <div className="bg-[#162713] border border-white/5 rounded-3xl p-6 md:p-8 flex flex-col gap-4">
-          <h3 className="text-h3 font-black uppercase tracking-wide text-white">
+          <h3 className="text-h3 font-black uppercase tracking-sub text-white">
             Contacto directo
           </h3>
           <p className="text-body text-white/75 font-normal">

@@ -110,7 +110,7 @@ export default function ProductSection() {
 
       <div className="relative z-20 w-full max-w-[85.5%] mx-auto flex flex-col px-0">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 md:mb-10 gap-6">
-          <h2 className="text-h2 font-black text-white tracking-wider">
+          <h2 className="text-h2 font-black text-white tracking-display">
             Productos de cannabis medicinal <br className="hidden sm:inline" />{" "}
             analizados en laboratorio propio
           </h2>

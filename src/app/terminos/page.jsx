@@ -118,7 +118,7 @@ export default function TerminosPage() {
                   <span className="text-[#dfd0bd] text-label font-bold tracking-widest shrink-0">
                     {s.n}
                   </span>
-                  <h2 className="text-h2 font-black uppercase tracking-wider">
+                  <h2 className="text-h2 font-black uppercase tracking-display">
                     {s.t}
                   </h2>
                 </div>

@@ -39,7 +39,7 @@ export default function StatsSection() {
               className="flex flex-col items-center justify-center text-center w-full"
             >
               {/* Reduced Proportional Heading Size */}
-              <h2 className="text-h1 font-black text-[#e5dac6] uppercase tracking-wider mb-1">
+              <h2 className="text-h1 font-black text-[#e5dac6] uppercase tracking-display mb-1">
                 {stat.value}
               </h2>
 
