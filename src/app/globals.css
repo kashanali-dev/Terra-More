@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+html,
+body {
+  /* Nothing may ever extend horizontally beyond the viewport, so the
+     page always stays within the header's left/right edges on any LCD */
+  overflow-x: clip;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

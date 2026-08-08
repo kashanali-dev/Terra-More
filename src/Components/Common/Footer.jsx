@@ -30,8 +30,8 @@ export default function Footer() {
       {/* CTA band */}
       <div className="w-full border-b border-white/10">
         <div className="max-w-[min(85.5%,100rem)] mx-auto px-0 py-10 md:py-12 flex flex-col lg:flex-row items-center justify-between gap-6 text-center lg:text-left">
-          <div className="flex flex-col gap-2">
-            <h2 className="text-h2 font-black uppercase tracking-display">
+          <div className="flex flex-col gap-2 min-w-0 flex-1">
+            <h2 className="text-h2 font-black uppercase tracking-display max-w-full">
               ¿Querés acceder al cannabis medicinal?
             </h2>
             <p className="text-white/70 text-body font-normal">
