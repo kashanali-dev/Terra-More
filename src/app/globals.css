@@ -3,13 +3,41 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* ------------------------------------------------------------------ */
+  /* Type scale (fluid, rem-based)                                       */
+  /* Mobile (375px) -> Desktop (1440px):                                 */
+  /*   H1    36px -> 56px   (2.25rem  -> 3.5rem)                         */
+  /*   H2    28px -> 40px   (1.75rem  -> 2.5rem)                         */
+  /*   H3    20px -> 24px   (1.25rem  -> 1.5rem)                         */
+  /*   Body  16px -> 18px   (1rem     -> 1.125rem)                       */
+  /*   Label 12px -> 14px   (0.75rem  -> 0.875rem)                       */
+  /* ------------------------------------------------------------------ */
+  --text-h1-size: clamp(2.25rem, 1.8rem + 1.9vw, 3.5rem);
+  --text-h2-size: clamp(1.75rem, 1.5rem + 1.1vw, 2.5rem);
+  --text-h3-size: clamp(1.25rem, 1.125rem + 0.38vw, 1.5rem);
+  --text-body-size: clamp(1rem, 0.9375rem + 0.19vw, 1.125rem);
+  --text-label-size: clamp(0.75rem, 0.7rem + 0.19vw, 0.875rem);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-barlow-condensed);
+  --font-display: var(--font-barlow-condensed);
   --font-mono: var(--font-geist-mono);
+
+  /* Semantic type tokens (headings bold, body regular) */
+  --text-h1: var(--text-h1-size);
+  --text-h1--line-height: 1.1;
+  --text-h2: var(--text-h2-size);
+  --text-h2--line-height: 1.15;
+  --text-h3: var(--text-h3-size);
+  --text-h3--line-height: 1.3;
+  --text-body: var(--text-body-size);
+  --text-body--line-height: 1.6;
+  --text-label: var(--text-label-size);
+  --text-label--line-height: 1.4;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +50,17 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-barlow-condensed);
+  font-size: var(--text-body-size);
+  line-height: 1.6;
+}
+
+/* Consistent letter spacing baseline for headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: 0.02em;
 }

@@ -1,63 +1,25 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
+import { products as productos } from "@/lib/products";
+import { useCart } from "@/context/CartContext";
 
 export default function ProductSection() {
   const sliderRef = useRef(null);
   const sectionRef = useRef(null);
   const autoPlayTimer = useRef(null);
+  const { addItem } = useCart();
+  const [added, setAdded] = useState(null);
 
-  const productos = [
-    {
-      id: 1,
-      categoria: "ACEITES MEDICINALES",
-      nombre: "Aceite con Gotero 10%",
-      precio: "$$$",
-      imagen: "/product1.png",
-      boton: "COMPRAR",
-    },
-    {
-      id: 2,
-      categoria: "ACEITES MEDICINALES",
-      nombre: "Aceite Dispensador Cream",
-      precio: "$$$",
-      imagen: "/product2.png",
-      boton: "COMPRAR",
-    },
-    {
-      id: 3,
-      categoria: "FLORES OUTDOOR",
-      nombre: "Flores Gorilla Glue",
-      precio: "$$$",
-      imagen: "/product3.png",
-      boton: "COMPRAR",
-    },
-    {
-      id: 4,
-      categoria: "FLORES INDOOR",
-      nombre: "Flores Amnesia Haze",
-      precio: "$$$",
-      imagen: "/product4.png",
-      boton: "COMPRAR",
-    },
-    {
-      id: 5,
-      categoria: "CREMAS MEDICINALES",
-      nombre: "Crema Antiinflamatoria",
-      precio: "$$$",
-      imagen: "/product2.png",
-      boton: "COMPRAR",
-    },
-    {
-      id: 6,
-      categoria: "EXTRACTOS CONCENTRADOS",
-      nombre: "Resina Premium",
-      precio: "$$$",
-      imagen: "/product1.png",
-      boton: "COMPRAR",
-    },
-  ];
+  const handleAdd = (slug) => {
+    addItem(slug, 1);
+    setAdded(slug);
+    window.setTimeout(() => {
+      setAdded((prev) => (prev === slug ? null : prev));
+    }, 1400);
+  };
 
   useEffect(() => {
     const startAutoPlay = () => {
@@ -148,7 +110,7 @@ export default function ProductSection() {
 
       <div className="relative z-20 w-full max-w-[85.5%] mx-auto flex flex-col px-0">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 md:mb-10 gap-6">
-          <h2 className="text-2xl sm:text-3xl md:text-[40px] font-bold text-white leading-[1.05] tracking-tight md:tracking-normal">
+          <h2 className="text-h2 font-black text-white tracking-wider">
             Productos de cannabis medicinal <br className="hidden sm:inline" />{" "}
             analizados en laboratorio propio
           </h2>
@@ -202,36 +164,47 @@ export default function ProductSection() {
               key={`prod-${producto.id}-${index}`}
               className="bg-[#1b2f15]/95 border border-white/5 rounded-3xl pt-8 pb-6 px-6 flex flex-col items-center justify-between text-center transition-transform duration-300 hover:scale-[1.01] w-full min-w-70 sm:min-w-[320px] md:min-w-[calc(33.333%-16px)] lg:min-w-[calc(25%-18px)] snap-start shadow-2xl backdrop-blur-sm"
             >
-              <span
-                className="text-[13px] sm:text-sm font-bold tracking-widest text-white mb-3 block uppercase notranslate"
-                translate="no"
-              >
+              <span className="text-label font-bold tracking-widest text-white mb-3 block uppercase">
                 {producto.categoria}
               </span>
 
               <div className="border border-white/60 rounded-full px-10 py-2 mb-6 w-fit min-w-27.5">
                 <span className="text-white text-sm font-bold tracking-widest">
-                  {producto.precio}
+                  {producto.precioEtiqueta}
                 </span>
               </div>
 
               {/* Optimized Individual Product Images for JSX */}
-              <div className="w-full h-48 sm:h-52 md:h-56 my-2 flex items-center justify-center relative drop-shadow-[0_16px_25px_rgba(0,0,0,0.65)]">
+              <Link
+                href={`/producto/${producto.slug}`}
+                aria-label={`Ver ${producto.nombre}`}
+                className="w-full h-48 sm:h-52 md:h-56 my-2 flex items-center justify-center relative drop-shadow-[0_16px_25px_rgba(0,0,0,0.65)]"
+              >
                 <Image
                   src={producto.imagen}
                   alt={producto.nombre}
                   fill
                   sizes="(max-w-640px) 100vw, (max-w-1024px) 33vw, 25vw"
                   loading="lazy"
-                  className="object-contain pointer-events-none"
+                  className="object-contain pointer-events-none transition-transform duration-300"
                 />
-              </div>
+              </Link>
 
               <div className="w-full mt-6">
-                <button className="bg-[#dfd0bd] hover:bg-white text-[#162713] font-black text-[13px] uppercase tracking-[0.15em] py-3.5 px-6 rounded-full w-full block transition-colors duration-300 shadow-md">
-                  {producto.boton}
+                <Link
+                  href={`/producto/${producto.slug}`}
+                  className="bg-[#dfd0bd] hover:bg-white text-[#162713] font-black text-sm uppercase tracking-[0.15em] py-3.5 px-6 rounded-full w-full block transition-colors duration-300 shadow-md"
+                >
+                  {producto.boton ?? "COMPRAR"}
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => handleAdd(producto.slug)}
+                  className="mt-2.5 text-xs text-white/70 hover:text-[#dfd0bd] font-bold uppercase tracking-[0.15em] transition-colors"
+                >
+                  {added === producto.slug ? "✓ Añadido al carrito" : "+ Agregar"}
                 </button>
-                <p className="text-[11px] text-white/70 font-light tracking-wide mt-4 normal-case">
+                <p className="text-xs text-white/70 font-normal tracking-wide mt-3 normal-case">
                   Consultá disponibilidad
                 </p>
               </div>

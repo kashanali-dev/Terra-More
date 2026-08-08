@@ -1,10 +1,20 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { useCart } from "@/context/CartContext";
+
+const NAV_LINKS = [
+  { label: "Inicio", href: "/" },
+  { label: "Productos", href: "/#pasos" },
+  { label: "About Us", href: "/nosotros" },
+  { label: "Cotizar", href: "/cotizar" },
+];
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { count, ready } = useCart();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,67 +40,69 @@ export default function Header() {
   return (
     <header
       suppressHydrationWarning={true}
-      className={`fixed top-0 left-0 w-full z-50 select-none antialiased notranslate transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-50 select-none antialiased transition-all duration-300 ${
         isScrolled
           ? "bg-[#162713] border-b border-white/10 h-20 shadow-2xl"
           : "bg-transparent border-b border-white/0 h-24"
       }`}
-      translate="no"
     >
       <div className="max-w-[85.5%] mx-auto h-full px-0">
         <div className="flex items-center justify-between h-full">
           {/* Logo Section */}
           <div className="shrink-0">
-            <a
+            <Link
               href="/"
-              className="text-white font-black text-xl md:text-2xl tracking-wider uppercase transition-transform duration-200 active:scale-95 block"
+              className="text-white font-black text-h2 tracking-wider uppercase transition-transform duration-200 active:scale-95 block"
             >
               TERRAMORE
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Links */}
-          <nav className="hidden lg:flex items-center space-x-8 xl:space-x-12">
-            <a
-              href="#inicio"
-              className="text-white font-bold lg:text-base uppercase tracking-wider transition-colors duration-200"
-            >
-              Inicio
-            </a>
-            <a
-              href="#productos"
-              className="text-white font-bold lg:text-base uppercase tracking-wider transition-colors duration-200"
-            >
-              Productos
-            </a>
-            <a
-              href="#pasos"
-              className="text-white font-bold lg:text-base uppercase tracking-wider transition-colors duration-200"
-            >
-              Pasos
-            </a>
-            <a
-              href="#estadisticas"
-              className="text-white font-bold lg:text-base uppercase tracking-wider transition-colors duration-200"
-            >
-              Estadísticas
-            </a>
-            <a
-              href="#informacion"
-              className="text-white font-bold lg:text-base uppercase tracking-wider transition-colors duration-200"
-            >
-              Información
-            </a>
+          <nav className="hidden lg:flex items-center space-x-8 xl:space-x-10">
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="text-white font-bold text-sm uppercase tracking-wider transition-colors duration-200 hover:text-[#dfd0bd]"
+              >
+                {link.label}
+              </Link>
+            ))}
           </nav>
 
-          {/* Desktop Button */}
-          <div className="hidden lg:block">
-            <a
-              href="#informacion"
-              className="border border-white/50 hover:border-white text-white font-bold lg:text-base tracking-wider uppercase py-2 px-7 rounded-full transition-all duration-200 whitespace-nowrap bg-white/5 hover:bg-white/10"
+          {/* Desktop Actions */}
+          <div className="hidden lg:flex items-center space-x-5">
+            {/* Cart */}
+            <Link
+              href="/carrito"
+              aria-label="Carrito de compras"
+              className="relative text-white/90 hover:text-[#dfd0bd] transition-colors p-2"
+            >
+              <svg
+                className="h-6 w-6"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+              >
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                <path d="M3 6h18" />
+                <path d="M16 10a4 4 0 0 1-8 0" />
+              </svg>
+              {ready && count > 0 ? (
+                <span className="absolute -top-0.5 -right-0.5 min-w-5 h-5 px-1 rounded-full bg-[#dfd0bd] text-[#162713] text-xs font-black flex items-center justify-center">
+                  {count}
+                </span>
+              ) : null}
+            </Link>
+
+            <Link
+              href="/cotizar"
+              className="border border-white/50 hover:border-white text-white font-bold text-sm tracking-wider uppercase py-2 px-7 rounded-full transition-all duration-200 whitespace-nowrap bg-white/5 hover:bg-white/10"
             >
               Consultar
-            </a>
+            </Link>
           </div>
 
           {/* Hamburger Menu Icon */}
@@ -135,7 +147,7 @@ export default function Header() {
         }`}
       >
         <div className="flex items-center justify-between px-6 h-24 border-b border-white/5">
-          <span className="text-white font-black text-xl tracking-wider uppercase">
+          <span className="text-white font-black text-h2 tracking-wider uppercase">
             TERRAMORE
           </span>
           <button
@@ -159,50 +171,30 @@ export default function Header() {
         </div>
 
         <div className="flex-1 overflow-y-auto px-6 py-6 space-y-1">
-          <a
-            href="#inicio"
-            onClick={() => setIsOpen(false)}
-            className="block text-white font-bold text-sm uppercase tracking-widest py-3.5 border-b border-white/5"
-          >
-            Inicio
-          </a>
-          <a
-            href="#productos"
-            onClick={() => setIsOpen(false)}
-            className="block text-white font-bold text-sm uppercase tracking-widest py-3.5 border-b border-white/5"
-          >
-            Productos
-          </a>
-          <a
-            href="#pasos"
-            onClick={() => setIsOpen(false)}
-            className="block text-white font-bold text-sm uppercase tracking-widest py-3.5 border-b border-white/5"
-          >
-            Pasos
-          </a>
-          <a
-            href="#estadisticas"
-            onClick={() => setIsOpen(false)}
-            className="block text-white font-bold text-sm uppercase tracking-widest py-3.5 border-b border-white/5"
-          >
-            Estadísticas
-          </a>
-          <a
-            href="#informacion"
-            onClick={() => setIsOpen(false)}
-            className="block text-white font-bold text-sm uppercase tracking-widest py-3.5 border-b border-white/5"
-          >
-            Información
-          </a>
+          {[...NAV_LINKS, { label: "Carrito", href: "/carrito" }].map((link) => (
+            <Link
+              key={link.label}
+              href={link.href}
+              onClick={() => setIsOpen(false)}
+              className="block text-white font-bold text-sm uppercase tracking-widest py-3.5 border-b border-white/5"
+            >
+              {link.label}
+              {link.label === "Carrito" && count > 0 ? (
+                <span className="ml-2 inline-block min-w-5 h-5 px-1 rounded-full bg-[#dfd0bd] text-[#162713] text-xs font-black text-center leading-5">
+                  {count}
+                </span>
+              ) : null}
+            </Link>
+          ))}
 
           <div className="pt-8 space-y-4">
-            <a
-              href="#informacion"
+            <Link
+              href="/cotizar"
               onClick={() => setIsOpen(false)}
               className="block text-center bg-[#dfd0bd] text-[#162713] font-bold text-sm uppercase tracking-widest py-3.5 rounded-full dynamic-click"
             >
               Consultar
-            </a>
+            </Link>
           </div>
         </div>
       </div>
